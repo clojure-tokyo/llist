@@ -16,3 +16,7 @@
       0
       (+ 1 (llen (lnext x)))))
 (defn lcons [e l] [e l])
+(defn lrepeat [n e]
+  (if (zero? n)
+    (lempty)
+    (lcons e (lrepeat (dec n) e))))
