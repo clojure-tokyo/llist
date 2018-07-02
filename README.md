@@ -1,14 +1,6 @@
-# llist
+llist: Cons Lists in Clojure
+============================
 
-A Clojure library designed to ... well, that part is up to you.
-
-## Usage
-
-FIXME
-
-## License
-
-Copyright © 2018 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Standard Lisp uses 'cons' lists: linked lists as cells that are pairs
+of values and references to the next cell. This is a reimplementation
+of that.
