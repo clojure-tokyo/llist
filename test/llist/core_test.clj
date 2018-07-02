@@ -17,7 +17,7 @@
 (deftest doublet
   (let [l2 (lcons 22 (lcons 12 (lempty)))]
     (is (= false (lempty? l2)))
-    #_(is (= 2 (llen l2)))
+    (is (= 2 (llen l2)))
     (is (= 22 (lfirst l2)))))
 
 (deftest lempty-test
