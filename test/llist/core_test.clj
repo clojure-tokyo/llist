@@ -34,3 +34,6 @@
         l3-expected (lcons 17 (lcons 17 (lcons 17 (lempty))))]
     (is (= 3 (llen l3)))
     (is (= l3-expected l3))))
+
+(deftest lrepeatbig-test
+  (is (= 1000000 (llen (lrepeat 1000000 1)))))

@@ -11,12 +11,20 @@
 (defn lnext  [llist] (let [[_ xs] llist] xs))
 (defn lempty [])
 (defn lempty?  [x] (= (lempty) x))
-(defn llen [x]
-  (if (lempty? x)
-      0
-      (+ 1 (llen (lnext x)))))
+(defn llen
+  ([x]
+   (llen x 0))
+  ([x acc]
+   (if (lempty? x)
+      acc
+      (recur (lnext x) (inc acc)))))
+
 (defn lcons [e l] [e l])
-(defn lrepeat [n e]
-  (if (zero? n)
-    (lempty)
-    (lcons e (lrepeat (dec n) e))))
+
+(defn lrepeat
+  ([n e]
+   (lrepeat n e (lempty)))
+  ([n e acc]
+   (if (zero? n)
+      acc
+      (recur (dec n) e (lcons e acc)))))
