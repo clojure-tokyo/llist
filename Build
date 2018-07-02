@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+basedir=$(cd "$(dirname "$0")" && pwd -P)
+
+cd $basedir
+mkdir -p .build/bin
+PATH="$basedir/.build/bin:$PATH"
+
+[[ -x .build/bin/lein ]] || curl -Lo .build/bin/lein \
+    https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+chmod +x .build/bin/lein
+
+lein test
